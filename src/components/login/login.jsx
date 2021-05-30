@@ -7,10 +7,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 const StyledSection = styled.section`
   width: 500px;
   border: 1px solid #1d2088;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 4px;
 `;
 const StyledImg = styled.div`
   display: flex;
@@ -23,6 +20,7 @@ const StyledImg = styled.div`
   }
 `;
 const StyledContainer = styled.section`
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,6 +54,9 @@ const Login = ({ authService }) => {
           <img src="/img/logo.png" alt="logo" />
         </StyledImg>
         <ul>
+          <li>
+            <p>Login</p>
+          </li>
           <li>
             <StyledButton onClick={onLogin}>
               <FaGoogle style={{ fontSize: "25px", margin: "0 10px" }} />
