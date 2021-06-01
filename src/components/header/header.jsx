@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const StyledHeader = styled.div`
   height: 100px;
-  background-color: #1d2088;
-  color: #fff;
+  background-color: ${(props) => props.theme.palette.blue};
+  color: ${(props) => props.theme.palette.white};
   position: relative;
   display: flex;
   justify-content: center;
@@ -16,13 +16,14 @@ const StyledHeader = styled.div`
   }
 `;
 const StyledButton = styled.button`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.palette.white};
   width: 100px;
   height: 40px;
   border-radius: 10px;
   margin-left: 40px;
-  /* position: absolute; */
+  position: absolute;
   top: 2rem;
+  right: 2rem;
   display: block;
 `;
 const Header = ({ onLogout }) => {

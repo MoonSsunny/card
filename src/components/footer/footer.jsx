@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const StyledFooter = styled.div`
   height: 100px;
-  background-color: #1d2088;
-  color: #fff;
+  background-color: ${(props) => props.theme.palette.blue};
+  color: ${(props) => props.theme.palette.white};
   text-align: center;
   display: flex;
   justify-content: center;

@@ -7,7 +7,7 @@ import { useHistory } from "react-router";
 
 const StyledSection = styled.section`
   width: 500px;
-  border: 1px solid #1d2088;
+  border: 1px solid ${(props) => props.theme.palette.blue};
   border-radius: 4px;
 `;
 const StyledImg = styled.div`
@@ -21,7 +21,7 @@ const StyledImg = styled.div`
   }
 `;
 const StyledContainer = styled.section`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.palette.white};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,14 +30,14 @@ const StyledContainer = styled.section`
 `;
 
 const StyledButton = styled.button`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.palette.white};
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 40px;
   border-radius: 40px;
-  border: 1px solid #1d2088;
+  border: 1px solid ${(props) => props.theme.palette.blue};
   margin: 10px 0;
 `;
 
