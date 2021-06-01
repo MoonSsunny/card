@@ -20,16 +20,16 @@ const StyledButton = styled.button`
   width: 100px;
   height: 40px;
   border-radius: 10px;
-  position: absolute;
+  margin-left: 40px;
+  /* position: absolute; */
   top: 2rem;
-  right: 2rem;
-  display: none;
+  display: block;
 `;
-const Header = () => {
+const Header = ({ onLogout }) => {
   return (
     <StyledHeader>
       <p>하루 기록</p>
-      <StyledButton>Logout</StyledButton>
+      {onLogout && <StyledButton onClick={onLogout}>Logout</StyledButton>}
     </StyledHeader>
   );
 };

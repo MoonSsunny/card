@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import styled from "styled-components";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { useHistory } from "react-router";
 
 const StyledSection = styled.section`
   width: 500px;
@@ -41,11 +42,29 @@ const StyledButton = styled.button`
 `;
 
 const Login = ({ authService }) => {
+  const history = useHistory();
+
+  const goToMain = (userId) => {
+    history.push({
+      pathname: "/main",
+      state: { id: userId },
+    });
+  };
+
   const onLogin = (e) => {
     authService //
       .login(e.currentTarget.textContent)
-      .then(console.log);
+      .then((data) => goToMain(data.user.uid));
   };
+
+  const onUserChange = (user) => {
+    user && goToMain(user.uid);
+  };
+
+  useEffect(() => {
+    authService.onAuthChange(onUserChange);
+  });
+
   return (
     <StyledSection>
       <Header />
