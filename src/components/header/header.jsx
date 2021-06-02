@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledHeader = styled.div`
-  height: 100px;
   background-color: ${(props) => props.theme.palette.blue};
   color: ${(props) => props.theme.palette.white};
   position: relative;
@@ -13,6 +12,8 @@ const StyledHeader = styled.div`
     font-size: 50px;
     text-align: center;
     font-family: "Song Myung", serif;
+    height: 100px;
+    line-height: 2;
   }
 `;
 const StyledButton = styled.button`
@@ -22,7 +23,7 @@ const StyledButton = styled.button`
   border-radius: 10px;
   margin-left: 40px;
   position: absolute;
-  top: 2rem;
+  top: 15px;
   right: 2rem;
   display: block;
 `;

@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import styled from "styled-components";
-import Edit from "../menu/edit";
-import Preview from "../menu/preview";
+import Edit from "../menu/preview";
+import Preview from "../menu/edit";
 
 const StyledSection = styled.div`
   width: 100%;
@@ -14,15 +14,74 @@ const StyledSection = styled.div`
 `;
 
 const StyledContainer = styled.div`
-  flex: 1;
   background-color: ${(props) => props.theme.palette.white};
   display: flex;
+  flex: 1;
   @media screen and (max-width: 80rem) {
     flex-direction: column;
+    overflow: auto;
   }
 `;
 
 const Main = ({ authService }) => {
+  const [cards, setCards] = useState([
+    {
+      id: "1",
+      title: "오늘하루",
+      date: "2021-06-01",
+      content: "오늘하루일기를 씁니다",
+      imgName: "name.jpg",
+      imgUrl: null,
+    },
+    {
+      id: "2",
+      title: "내일을 뭐할까",
+      date: "2021-06-01",
+      content: "오늘하루일기를 씁니다",
+      imgName: "name.jpg",
+      imgUrl: "",
+    },
+    {
+      id: "3",
+      title: "한줄기록",
+      date: "2021-06-01",
+      content: "오늘하루일기를 씁니다",
+      imgName: "name.jpg",
+      imgUrl: "",
+    },
+    {
+      id: "4",
+      title: "감사합니다요",
+      date: "2021-06-01",
+      content: "오늘하루일기를 씁니다",
+      imgName: "name.jpg",
+      imgUrl: null,
+    },
+    {
+      id: "5",
+      title: "러블리걸",
+      date: "2021-06-01",
+      content: "오늘하루일기를 씁니다",
+      imgName: "name.jpg",
+      imgUrl: null,
+    },
+    {
+      id: "6",
+      title: "check",
+      date: "2021-06-01",
+      content: "오늘하루일기를 씁니다",
+      imgName: "name.jpg",
+      imgUrl: null,
+    },
+    {
+      id: "7",
+      title: "check",
+      date: "2021-06-01",
+      content: "오늘하루일기를 씁니다",
+      imgName: "name.jpg",
+      imgUrl: null,
+    },
+  ]);
   const history = useHistory();
   const onLogout = () => {
     authService.logout();
@@ -39,8 +98,8 @@ const Main = ({ authService }) => {
     <StyledSection>
       <Header onLogout={onLogout} />
       <StyledContainer>
-        <Edit />
-        <Preview />
+        <Edit cards={cards} />
+        <Preview cards={cards} />
       </StyledContainer>
       <Footer />
     </StyledSection>

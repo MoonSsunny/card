@@ -1,22 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledEdit = styled.div`
-  flex-basis: 50%;
+import CardEdit from "./card_edit";
+
+const StyledPreview = styled.div`
   h1 {
-    margin-left: 20px;
-    color: ${(props) => props.theme.palette.blue};
-    text-align: left;
-    font-size: 2rem;
     font-family: "Song Myung", serif;
+    margin-left: 20px;
   }
 `;
 
-const Edit = () => {
+const Edit = ({ cards }) => {
   return (
-    <StyledEdit>
-      <h1>오늘의 일기를 기록하세요</h1>
-    </StyledEdit>
+    <StyledPreview>
+      <h1>기록중...</h1>
+      {cards.map((card) => (
+        <CardEdit card={card} key={card.id} />
+      ))}
+    </StyledPreview>
   );
 };
 

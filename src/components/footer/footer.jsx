@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledFooter = styled.div`
-  height: 100px;
   background-color: ${(props) => props.theme.palette.blue};
   color: ${(props) => props.theme.palette.white};
   text-align: center;
@@ -12,6 +11,8 @@ const StyledFooter = styled.div`
   p {
     font-family: "Song Myung", serif;
     font-size: 20px;
+    height: 100px;
+    line-height: 5;
   }
 `;
 const Footer = () => {
