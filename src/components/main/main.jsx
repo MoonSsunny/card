@@ -57,30 +57,6 @@ const Main = ({ authService }) => {
       imgName: "name.jpg",
       imgUrl: null,
     },
-    {
-      id: "5",
-      title: "러블리걸",
-      date: "2021-06-01",
-      content: "오늘하루일기를 씁니다",
-      imgName: "name.jpg",
-      imgUrl: null,
-    },
-    {
-      id: "6",
-      title: "check",
-      date: "2021-06-01",
-      content: "오늘하루일기를 씁니다",
-      imgName: "name.jpg",
-      imgUrl: null,
-    },
-    {
-      id: "7",
-      title: "check",
-      date: "2021-06-01",
-      content: "오늘하루일기를 씁니다",
-      imgName: "name.jpg",
-      imgUrl: null,
-    },
   ]);
   const history = useHistory();
   const onLogout = () => {

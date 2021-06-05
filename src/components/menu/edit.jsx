@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-
-import CardEdit from "./card_edit";
+import CardEdit from "../card/card_edit";
 
 const StyledPreview = styled.div`
   h1 {
-    font-family: "Song Myung", serif;
     margin-left: 20px;
+    color: ${(props) => props.theme.palette.blue};
+    text-align: left;
+    font-size: 2rem;
+    font-family: "Song Myung", serif;
   }
 `;
 

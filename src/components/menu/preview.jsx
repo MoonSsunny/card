@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Card from "./card";
+import Card from "../card/card";
 
 const StyledEdit = styled.div`
   flex-basis: 50%;

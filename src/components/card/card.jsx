@@ -7,7 +7,8 @@ const StyledCardList = styled.li`
   width: 500px;
   height: 300px;
   background-color: yellow;
-  margin: 10px;
+  margin: 0 10px 30px;
+
   display: inline-flex;
   justify-content: center;
   align-items: center;
