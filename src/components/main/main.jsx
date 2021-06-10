@@ -19,7 +19,6 @@ const StyledContainer = styled.div`
   flex: 1;
   @media screen and (max-width: 80rem) {
     flex-direction: column;
-    overflow: auto;
   }
 `;
 

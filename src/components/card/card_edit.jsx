@@ -1,44 +1,50 @@
 import React from "react";
 import styled from "styled-components";
-
-const StyledWrite = styled.div`
-  margin: 10px;
-  padding: 20px;
+const StyledCardList = styled.li`
   width: 500px;
   height: 300px;
-  background-color: skyblue;
+  background-color: ${(props) => props.theme.palette.boxColor};
+  margin: 0 10px 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border-radius: 10px;
 `;
 
 const StyledTitle = styled.div`
   display: flex;
   align-items: center;
-  background-color: blue;
+  width: 480px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: ${(props) => props.theme.palette.black};
   p {
     margin-left: 20px;
-    border: 1px solid #000;
   }
   h1 {
-    border: 1px solid #000;
+    color: ${(props) => props.theme.palette.black};
   }
   span {
     font-size: 18px;
-    border: 1px solid #000;
   }
 `;
 
 const StyledContent = styled.textarea`
   resize: none;
-  width: 100%;
+  width: 480px;
+  margin: 10px;
   height: 150px;
   border: 1px solid #000;
   overflow: auto;
+  border: 1px solid #fff;
 `;
 
 const CardEdit = ({ card }) => {
   const { title, date, content } = card;
 
   return (
-    <StyledWrite>
+    <StyledCardList>
       <StyledTitle>
         <span>Title</span>
         <h1>{title}</h1>
@@ -48,7 +54,6 @@ const CardEdit = ({ card }) => {
         <p>{date}</p>
       </StyledTitle>
       <div>
-        <p>내용</p>
         <StyledContent
           name="content"
           placeholder="오늘의 하루를 기록해 보세요 "
@@ -56,7 +61,7 @@ const CardEdit = ({ card }) => {
           {content}
         </StyledContent>
       </div>
-    </StyledWrite>
+    </StyledCardList>
   );
 };
 

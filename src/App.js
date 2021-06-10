@@ -9,6 +9,8 @@ function App({ authService }) {
     palette: {
       blue: "#1d2088",
       white: "#fff",
+      boxColor: "#C1D72A",
+      black: "#000",
     },
   };
 

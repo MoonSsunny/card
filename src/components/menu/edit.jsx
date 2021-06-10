@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import CardEdit from "../card/card_edit";
 
-const StyledPreview = styled.div`
+const StyledEdit = styled.div`
+  flex-basis: 50%;
+  overflow: auto;
   h1 {
     margin-left: 20px;
     color: ${(props) => props.theme.palette.blue};
@@ -12,15 +14,22 @@ const StyledPreview = styled.div`
   }
 `;
 
-const Edit = ({ cards }) => {
+const StyledCard = styled.ul`
+  text-align: center;
+  margin: 0;
+`;
+
+const Preview = ({ cards }) => {
   return (
-    <StyledPreview>
-      <h1>기록중...</h1>
-      {cards.map((card) => (
-        <CardEdit card={card} key={card.id} />
-      ))}
-    </StyledPreview>
+    <StyledEdit>
+      <h1>기록중 ...</h1>
+      <StyledCard>
+        {cards.map((card) => (
+          <CardEdit card={card} key={card.id} />
+        ))}
+      </StyledCard>
+    </StyledEdit>
   );
 };
 
-export default Edit;
+export default Preview;
